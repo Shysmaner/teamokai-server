@@ -7,15 +7,12 @@ dotenv.config();
 
 const app = express();
 
-// app.use(
-//   cors({
-//     origin: "https://teamokai.netlify.app",
-//     methods: ["POST"],
-//   })
-// );
-
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    origin: "https://teamokai.netlify.app",
+    methods: ["POST"],
+  })
+);
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
